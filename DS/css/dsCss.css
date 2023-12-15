@@ -1,0 +1,20 @@
+body main .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  justify-content: space-evenly;
+}
+body main .row .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main .row .sideNav {
+  width: 30%;
+}
+body main .row .mainContent {
+  width: 60%;
+}
