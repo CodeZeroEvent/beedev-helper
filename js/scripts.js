@@ -1,5 +1,41 @@
+
 $(document).ready(function(){
     // Menu Items
+    $('#showCommands').click(function() {
+        $('#hideCommands').animate( {
+            width: 'toggle'
+        })
+        $('#hideFundamentals').css({
+            'display': 'none',
+        })
+        $('#hideReact').css({
+            'display': 'none',
+        })
+        $('#hideJava').css({
+            'display': 'none',
+        })
+        $('#hideCSharp').css({
+            'display': 'none',
+        })
+        $('#hideDataScience').css({
+            'display': 'none',
+        })
+        $('#hideCyberSecurity').css({
+            'display': 'none',
+        })
+        $('#hidePython').css({
+            'display': 'none',
+        })
+        $('#hideCommands').css({
+            'display': 'flex',
+            'flex-direction': 'column',
+            'justify-content': 'center',
+            'align-items': 'center',
+            'background-color': '#DBEBD4',
+            'z-index': '2',
+            'margin': '.5em'
+        })
+    })
     $('#showFundamentals').click(function() {
         $('#hideFundamentals').animate( {
             width: 'toggle'
@@ -166,41 +202,6 @@ $(document).ready(function(){
             'display': 'none',
         })
         $('#hideCSharp').css({
-            'display': 'flex',
-            'flex-direction': 'column',
-            'justify-content': 'center',
-            'align-items': 'center',
-            'background-color': '#DBEBD4',
-            'z-index': '2',
-            'margin': '.5em'
-        })
-    })
-    $('#showCommands').click(function() {
-        $('#hideCommands').animate( {
-            width: 'toggle'
-        })
-        $('#hideFundamentals').css({
-            'display': 'none',
-        })
-        $('#hideReact').css({
-            'display': 'none',
-        })
-        $('#hideJava').css({
-            'display': 'none',
-        })
-        $('#hideCSharp').css({
-            'display': 'none',
-        })
-        $('#hideDataScience').css({
-            'display': 'none',
-        })
-        $('#hideCyberSecurity').css({
-            'display': 'none',
-        })
-        $('#hidePython').css({
-            'display': 'none',
-        })
-        $('#hideCommands').css({
             'display': 'flex',
             'flex-direction': 'column',
             'justify-content': 'center',
@@ -912,6 +913,65 @@ $(document).ready(function(){
             'margin': '.5em'
         })
     })
+    // Starts Python Playgrounds
+    $('#showPyLoops').click(function(){
+        $('#hidePyLoops').animate( {
+            width: 'toggle'
+        })
+        $('#hidePyLoops').css({
+            'display': 'flex',
+            'flex-direction': 'column',
+            'justify-content': 'center',
+            'align-items': 'center',
+            'background-color': '#DBEBD4',
+            'z-index': '2',
+            'margin': '.5em'
+        })
+    })
+    $('#showVirtualEnv').click(function() {
+        $('#hideVirtualEnv').animate( {
+            width: 'toggle'
+        })
+        $('#hideVirtualEnv').css({
+
+            'display': 'flex',
+            'flex-direction': 'column',
+            'justify-content': 'center',
+            'align-items': 'center',
+            'background-color': '#DBEBD4',
+            'z-index': '2',
+            'margin': '.5em'
+        })
+    })
+    // Start Nav Dropdowns
+    $('#showAdvancedPython').click(function() {
+        $('#hideAdvancedPython').animate( {
+            width: 'toggle'
+        })
+        $('#hideAdvancedPython').css({
+            'display': 'flex',
+            'flex-direction': 'column',
+            'justify-content': 'center',
+            'align-items': 'center',
+            'background-color': '#DBEBD4',
+            'z-index': '2',
+            'margin': '.5em'
+        })
+    })
+    $('#showWebDevPython').click(function() {
+        $('#hideWebDevPython').animate( {
+            width: 'toggle'
+        })
+        $('#hideWebDevPython').css({
+            'display': 'flex',
+            'flex-direction': 'column',
+            'justify-content': 'center',
+            'align-items': 'center',
+            'background-color': '#DBEBD4',
+            'z-index': '2',
+            'margin': '.5em'
+        })
+    })
 })
 
 function copyTriangle() {
@@ -921,28 +981,62 @@ function copyTriangle() {
     copyText.setSelectionRange(0, 99999)
     navigator.clipboard.writeText(copyText.value)
     alert("Copied the text: " + copyText.value)
-  }
-  function copyStop() {
+}
+function copyStop() {
     var copyText = document.querySelector('#stop')
     console.log(copyText)
     copyText.select()
     copyText.setSelectionRange(0, 99999)
     navigator.clipboard.writeText(copyText.value)
     alert("Copied the text: " + copyText.value)
-  }
-  function copyHeart() {
+}
+function copyHeart() {
     var copyText = document.querySelector('#heart')
     console.log(copyText)
     copyText.select()
     copyText.setSelectionRange(0, 99999)
     navigator.clipboard.writeText(copyText.value)
     alert("Copied the text: " + copyText.value)
-  }
-  function copyDiamond() {
+}
+function copyDiamond() {
     var copyText = document.querySelector('#diamond')
     console.log(copyText)
     copyText.select()
     copyText.setSelectionRange(0, 99999)
     navigator.clipboard.writeText(copyText.value)
     alert("Copied the text: " + copyText.value)
-  }
+}
+
+function addBorderToCard() {
+    const card = document.getElementById('myCard')
+    card.addEventListener('mouseover', () => {
+        card.classList.add('hovered-card')
+    })
+    card.addEventListener('mouseout', () => {
+        card.classList.remove('hovered-card')
+    })
+}
+
+function placeEditor() {
+    const container = document.createElement('div')
+    return container
+}
+
+// document.getElementById('reveal_button').addEventListener('click', function(){
+//     document.getElementById('card_reveal').style.display='block';
+//     this.style.display='none';
+// })
+
+document.querySelectorAll('.btn').forEach(function(button) {
+    button.addEventListener('click', function() {
+        // document.getElementById('card_reveal').style.display='block';
+        // this.style.display='none';
+        var cardContent = this.closest('.card-body').querySelector('.card_reveal'); // Assuming the content div is right after the button
+        cardContent.style.display = 'block';
+        this.style.display = 'none';
+    });
+});
+
+
+// add github feature
+// push it to main repo
